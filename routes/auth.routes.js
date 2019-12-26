@@ -8,7 +8,7 @@ const router = Router();
 
 
 // /api/auth
-router.post('register',
+router.post('/register',
 [
   check('email', 'Wrong email').isEmail(),
   check('password', 'Password is uncorrect').isLength({ min: 6})
@@ -42,7 +42,7 @@ async (req, res) => {
   }
 })
 
-router.post('login',
+router.post('/login',
 [
   check('email', 'Email is wrong').normalizeEmail().isEmail(),
   check('password', 'Enter your password').exists()
